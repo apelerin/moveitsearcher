@@ -1,24 +1,21 @@
-# README
+# README : PROJET MOVIE SEARCHER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bonjour! L'équipe est composée de Fred (FredS), Axel Pélerin et Juliette Audema. 
 
-Things you may want to cover:
+Ce programme est une app Ruby on Rails
 
-* Ruby version
 
-* System dependencies
+Le but de l'appli sera d'être une site pour chercher des infos sur un film qui vous intéresse!
+Notre app se sert de l'API The Movie Database dispo ici: https://developers.themoviedb.org/4/getting-started
+Vous n'avez plus alors qu'à taper dans la barre de recherche le nom du film qui vous intéresse.
 
-* Configuration
+Le site est en ligne et vous pouvez le visiter ici : https://moveitsearcher.herokuapp.com/
 
-* Database creation
 
-* Database initialization
+## Comment se servir du programme 
 
-* How to run the test suite
+Pour faire marcher ce programme, il vous faut d'abord faire ```$ bundle install``` ensuite ```$ rails db:create``` et pour terminer ```$ rails db:migrate```
 
-* Services (job queues, cache servers, search engines, etc.)
+## L'arborescence du dossier et les programmes
 
-* Deployment instructions
-
-* ...
+Dans ce dossier vous allez trouver l'arborescence classique des apps Ruby on Rails.
