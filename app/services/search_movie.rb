@@ -1,15 +1,15 @@
+require 'themoviedb'
+require 'dotenv'
+
+Dotenv.load
+
 class SearchMovie
-  require 'themoviedb'
-  require 'dotenv'
-  Dotenv.load
+    def initialize(query)
+      @query = query
+    end
 
-  def initialize(query)
-    @query = query
-    search
-  end
-
-  def search
+  def search_movie
     Tmdb::Api.key(ENV['MY_API_KEY'])
-    Tmdb::Movie.find(@query)
+    return Tmdb::Movie.find(@query)
   end
 end

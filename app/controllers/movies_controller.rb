@@ -4,7 +4,8 @@ class MoviesController < ApplicationController
 
   def index
     puts "///////// #{params} !!!!!!!!!!!!!!!!!!!!!111 #{params_form_for}"
-    @searchmovie = SearchMovie.new(params_form_for)
+    @searchmovie = SearchMovie.new(params_form_for[:request])
+    @searchmovie = @searchmovie.search_movie
   end
 
   private
