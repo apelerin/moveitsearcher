@@ -1,5 +1,14 @@
-<% puts @searchmovie.first %>
+<div style="margin-left: auto; margin-right: auto; margin-top: 30px; width: 30%;">
+	<h1>Here are your results bro:</h1>
+</div>
+
 <% @searchmovie.each do |movie| %>
-	<%= movie.title %>
-	<br/>
+	<div class="border rounded bg-light" style="margin-left: auto; margin-right: auto; width: 70%; margin-top: 15px; margin-bottom: 15px; padding: 20px; border: 1px solid Black;">
+		<%= movie.title %>
+		<br/>
+		<br/>
+		<%= movie.release_date %>
+		<br/>
+		<br/>
+	</div>
 <% end %>

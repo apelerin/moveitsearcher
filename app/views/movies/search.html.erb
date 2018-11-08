@@ -1,6 +1,14 @@
-Bienvenue les coco
+<div style="margin-left: auto; margin-right: auto; width: 500px; margin-top: 150px; text-align: center;">
+  <%= image_tag 'logo_thp.png', title: "Logo THP" %>
+	<h1>Search your movie, NOW!</h1>
+</div>
+<div style="margin-left: auto; margin-right: auto; margin-top: 15px; text-align: center">
 
-<%= form_for :search_form do |f| %>
-	<%= f.text_field :request %>
-	<%= f.submit "Search" %>
-<% end %>
+	<%= form_for :search_form do |f| %>
+
+		<div class="form-group" style="width: 30%; margin-left: auto; margin-right: auto;">
+				<%= f.text_field :request, class: "form-control" %>
+		</div>
+		<%= f.submit "Search", class:"btn btn-primary" %>
+	<% end %>
+</div>

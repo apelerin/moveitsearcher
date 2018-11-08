@@ -9,7 +9,10 @@ class SearchMovie
     end
 
   def search_movie
+  	puts ENV['MY_API_KEY']
     Tmdb::Api.key(ENV['MY_API_KEY'])
+    puts 'yooooooo'
     return Tmdb::Movie.find(@query)
+    puts 'yooooooo'
   end
 end
