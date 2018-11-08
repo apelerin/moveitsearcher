@@ -3,7 +3,6 @@ class MoviesController < ApplicationController
   end
 
   def index
-    puts "///////// #{params} !!!!!!!!!!!!!!!!!!!!!111 #{params_form_for}"
     @searchmovie = SearchMovie.new(params_form_for[:request])
     @searchmovie = @searchmovie.search_movie
   end

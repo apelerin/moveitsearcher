@@ -1,21 +1,32 @@
-<div style="margin-left: auto; margin-right: auto; margin-top: 30px; width: 30%;">
-	<h1>Here are your results bro:</h1>
-</div>
+<% if @searchmovie.first != nil %>
+	<div style="margin-left: auto; margin-right: auto; margin-top: 30px; width: 30%;">
+		<h1>Here are your results bro:</h1>
+	</div>
 
-<% @searchmovie.each do |movie| %>
-	<div class="border rounded bg-light" style="margin-left: auto; margin-right: auto; width: 70%; margin-top: 15px; margin-bottom: 15px; padding: 20px; border: 1px solid Black;">
-		<%= url = "https://image.tmdb.org/t/p/w600_and_h900_bestv2#{movie.poster_path}" %>
-		<img src=<%=url%>> 
-		<br/>
-		<br/>
-		<%= movie.title %>
-		<br/>
-		<br/>
-		<%= movie.release_date %>
-		<br/>
-		<br/>
-		<%= Tmdb::Movie.casts(movie.id) %>
-		<br/>
-		<br/>
+	<% @searchmovie.each do |movie| %>
+		<div class="border rounded bg-light" style="margin-left: auto; margin-right: auto; width: 70%; margin-top: 15px; margin-bottom: 15px; padding: 20px; border: 1px solid Black;">
+			<% url = "https://image.tmdb.org/t/p/w600_and_h900_bestv2#{movie.poster_path}" %>
+			<% if movie.poster_path != nil %>
+				<img src=<%=url%>> 
+			<% end %>
+			<br/>
+			<br/>
+			<%= movie.title %>
+			<br/>
+			<br/>
+			<%= movie.release_date %>
+			<br/>
+			<br/>
+			<% director = Tmdb::Movie.credits(movie.id)['crew'].select{ |crew| crew['department'] == 'Directing'} %>
+      			<% if director[0] != nil %>
+				<%= director[0]['name'] %>
+			<% end %>
+			<br/>
+			<br/>
+		</div>
+	<% end %>
+<% else %>
+	<div style="margin-left: auto; margin-right: auto; margin-top: 30px; width: 30%;">
+		<h1>Brazilia's so nice, so I'll say it twice: No movies there amigo, No movies there amigo.</h1>
 	</div>
 <% end %>

@@ -10,7 +10,6 @@ class SearchMovie
 
   def search_movie
     Tmdb::Api.key(ENV['MY_API_KEY'])
-    puts Tmdb::Movie.credits(Tmdb::Movie.find(@query).first.id)[:director]
     return Tmdb::Movie.find(@query)
   end
 end
